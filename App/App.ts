@@ -1,5 +1,4 @@
 import app from "./index";
-import config from "./config";
 const { PORT } = process.env;
 
 // ez a végpont mutatja, hogy fut a node js szerver
