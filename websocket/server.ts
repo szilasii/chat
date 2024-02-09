@@ -10,8 +10,6 @@ server.on ('connection',(socket:Websocket) => {
     socket.on('message', (message)=> {
             broadcast(message,socket)
         })
-
-   
     socket.on('close',() => {
         clients.delete(socket)
     })
