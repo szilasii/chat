@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken"
+import 'dotenv/config'
 const { JWT_STRING } = process.env;
 
 function verifyToken(req:any,res:any,next:any) {
@@ -8,7 +9,7 @@ function verifyToken(req:any,res:any,next:any) {
     }
 
     try {
-
+        console.log(process.env.JWT_STRING)
         if (!JWT_STRING){
             return res.status(401).send("Hiba van a token visszafejtésénél"); 
         }

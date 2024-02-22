@@ -4,9 +4,9 @@ import auth from '../auth/auth';
 
 const router: Router = Router();
 
-router.get('/user', auth, user.getAllUserInfos);
-router.get('/user/:id', user.getUserDataFromId);
+
+router.get('/user/:id',auth, user.getUserDataFromId);
 router.post('/user/reg', user.regUser);
-router.post('/user/:id/address', user.createNewAddress);
+
 
 export default router;
