@@ -17,9 +17,11 @@ onMounted(async () => {
 </script>
  
 <template>
-    <span class="chat-messages" v-for="message in messages">
-      <chatMessageItem v-bind="message"/>
-    </span>
+    <div class="chat-messages">
+      <span  v-for="message in messages">
+        <chatMessageItem v-bind="message" :user="user.userID"/>
+      </span>
+    </div>
 </template>
  
 <style scoped>
@@ -28,7 +30,7 @@ onMounted(async () => {
   height: 100vh;
   overflow-y: auto;
   padding: 10px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column-reverse;
 }
  </style>
