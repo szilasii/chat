@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
-const messages = [1,2,3,4,5];
+const props = defineProps(['message','name','sendTime']);
 
 </script>
  
 <template>
     
-    <div class="msg-box" v-for="message in messages">{{message}}</div>
+    <span class="msg-box" >{{ props.name + props.message + props.sendTime }}</span>
     
 </template>
  

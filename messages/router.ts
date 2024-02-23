@@ -6,6 +6,6 @@ const router = Router();
 
 router.post('/message', auth, saveNewMessage);
 router.get('/message', auth, getAllMessages);
-router.get('message/:userID',auth, getUserMessagesFromId)
+router.get('/message/:userID',auth, getUserMessagesFromId)
 
 export default router;

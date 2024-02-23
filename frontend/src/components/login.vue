@@ -20,7 +20,7 @@ const login = async () => {
       return;
     }
  
-    const data = await autFetch("http://localhost:8000/api/login", {"email": email.value, "password": password.value});
+    const data = await autFetch(`${import.meta.env.VITE_BASE_API_URL}login`, {"email": email.value, "password": password.value});
  
     if (data.status === 404 || data.status === 401) {
       Swal("Figyelem!", data.error, "error");

@@ -7,9 +7,9 @@ export function getUserMessagesFromId(req: any,res:any) {
         if (err) throw err;
         console.log('sikeres csatlakozás');
     })
-    con.query('call getAllUserMessages(?)',[req.params['id']], (err,result:any) =>{
+    con.query('call getAllUserMessages(?)',[req.params['userID']], (err,result:any) =>{
         if (err) throw err;
-        res.send(result[0][0]);
+        res.send(result[0]);
     })   
 }
 
@@ -22,7 +22,7 @@ export function getAllMessages(req: any,res:any) {
     })
     con.query('call getAllMessages', (err,result:any) =>{
         if (err) throw err;
-        res.send(result[0][0]);
+        res.send(result[0]);
     })   
 }
 
