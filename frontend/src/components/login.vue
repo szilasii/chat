@@ -37,6 +37,10 @@ const login = async () => {
     Swal('Hiba',`${err}`,'error');
   }
 }
+
+const signup = () => {
+  router.push('/signup')
+}
 </script>
  
 <template>
@@ -48,12 +52,33 @@ const login = async () => {
         <input type="email" placeholder="E-mail" v-model="email" class="input-field">
         <input type="password" placeholder="Jelszó" v-model="password" class="input-field">
       </div>
-      <button class="login-button">Login</button>
+      <div class="login-button-container">
+        <button class="login-button">Login</button>
+        <a @click="signup" class="login-button right">Regisztráció</a>
+      </div>
     </form>
+    
   </div>
 </template>
  
 <style scoped>
+
+.login-button-container {
+  display: table;
+  width: 100%;
+  margin: 0;
+
+
+}
+.login-button-container>button {
+  text-align: left;
+  display: table-cell;
+}
+.login-button-container>a {
+  text-align: center;
+  display: table-cell;
+}
+
 .login-container {
   display: flex;
   flex-direction: column;

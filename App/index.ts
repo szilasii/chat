@@ -7,6 +7,8 @@ import messageRouter from '../messages/router'
 import cors from 'cors';
 import 'dotenv/config'
 import bodyParser from 'body-parser';
+import uploadRouter  from '../upload/router';
+
 
 var app = express();
 
@@ -25,5 +27,7 @@ app.use(router);
 app.use('/api',userRouter);
 app.use('/api',loginRouter);
 app.use('/api',messageRouter);
+app.use('/api',uploadRouter);
+
 
 export default app

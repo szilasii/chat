@@ -7,12 +7,14 @@ import { onMounted, ref } from 'vue';
 
 
 const userData: any = useUserStore();
-const user:User = JSON.parse(userData.user);
+const user = JSON.parse(JSON.stringify( userData.user));
 let messages: any = ref([]);
 
 onMounted(async () => {
+ 
+  if (user.token) {
   const getMessages = await getData(`${import.meta.env.VITE_BASE_API_URL}message/`,user.token);
-  messages.value.push(...getMessages);
+  messages.value.push(...getMessages);}
 })
 </script>
  

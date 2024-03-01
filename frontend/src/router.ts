@@ -9,7 +9,12 @@ const routes = [{
 {
     path: "/chat",
     name:'Chat',
-    component: () => import('./pages/Chat.vue'),
+    component: () => import('./pages/ChatPage.vue'),
+},
+{
+    path: "/signup",
+    name:'SignUp',
+    component: () => import('./pages/SignUp.vue'),
 },
 ]
 

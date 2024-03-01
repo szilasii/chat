@@ -23,7 +23,7 @@ export async function getData(url="", token:string) {
 
 
 export async function postData(url="", data = {}, token:string) {
-const response = await fetch(import.meta.env.BASE_API_URL + url, {
+const response = await fetch(url, {
      method: "POST", // POST, PUT, DELETE ...       
     headers: {
      "Content-Type" : "application/json",
@@ -33,3 +33,15 @@ const response = await fetch(import.meta.env.BASE_API_URL + url, {
 })
 return response;   
 };
+
+
+export async function postFormData(url="", formData:FormData) {
+    const response = await fetch(url, {
+         method: "POST", // POST, PUT, DELETE ...       
+        headers: {
+         "Content-Type" : 'multipart/form-data'
+        }, 
+        body: formData,   
+    })
+    return response.json();   
+    };
