@@ -1,10 +1,19 @@
-<script setup lang="ts"> 
+<script setup lang="ts">
+import { ref } from 'vue';
+
+
+const props = defineProps(['user'])
+const mess = ref("");
+const send = () => {
+  console.log(`${mess.value} ${props.user.value.token}`)
+
+}
 </script>
  
 <template>
     <div class="chat-input">
-      <input type="text" placeholder="Üzenet írása..." @keyup.enter=""/>
-      <button>Küldés</button>
+      <input type="text" v-model="mess" placeholder="Üzenet írása..." @keyup.enter="send"/>
+      <button @click="send">Küldés</button>
     </div>
 </template>
 <style scoped>

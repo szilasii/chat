@@ -7,7 +7,7 @@ import { onMounted, ref } from 'vue';
 
 
 const userData: any = useUserStore();
-const user = JSON.parse(JSON.stringify( userData.user));
+const user = JSON.parse( userData.user);
 let messages: any = ref([]);
 
 onMounted(async () => {
